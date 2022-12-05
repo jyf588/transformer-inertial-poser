@@ -1,0 +1,16 @@
+# Copyright (c) Meta, Inc. and its affiliates.
+# Copyright (c) Stanford University
+numpy
+pybullet
+pygame
+imageio
+scipy
+matplotlib
+scikit-learn
+pillow
+tqdm
+networkx
+joblib
+pathlib
+pickle5
+einops
