@@ -8,7 +8,7 @@ Video: https://youtu.be/rXb6SaXsnc0
 
 Copyright 2022 Meta Inc. and Stanford University
 
-Licensed under the Apache License, Version 2.0
+Licensed under the CC-BY-NC-4.0 License
 
 ![TIP Teaser](data/tip.png)
 
@@ -100,7 +100,7 @@ python preprocess_and_combine_syn_amass.py --data_version_tag v1
 
 4.Training:
 ```
-python -m train_model --save_path "output/model-new-v1-0" --log-interval 20 --seed 5104 --clip 5.0 --epochs 1000 --batch_size 256 --lr 1e-4 --seq_len 40 --rnn_nhid 512 --tf_nhid 1024 --tf_in_dim 256 --n_heads 16 --tf_layers 4 --in_dropout 0.0 --past_dropout 0.8 --weight_decay 1e-4 --cuda --cosine_lr --n_sbps 5 --with_acc_sum --data_version_tag "v1" --noise_input_hist 0.0 > "output/model-new-v1-0-out.txt" &
+python -m train_model --save_path "output/model-new-v1-0" --log-interval 20 --seed 5104 --clip 5.0 --epochs 1100 --batch_size 256 --lr 1e-4 --seq_len 40 --rnn_nhid 512 --tf_nhid 1024 --tf_in_dim 256 --n_heads 16 --tf_layers 4 --in_dropout 0.0 --past_dropout 0.8 --weight_decay 1e-4 --cuda --cosine_lr --n_sbps 5 --with_acc_sum --data_version_tag "v1" --noise_input_hist 0.15 > "output/model-new-v1-0-out.txt" &
 ```
 
 We did not do much search on the hyper parameters above -- feel free to do more sweeping on them.
@@ -132,6 +132,7 @@ The commands above calls ```real_time_runner_minimal.py```, which runs core (i.e
 ```
  >Note: different from previous methods, our Transformer-decoder-based method does not have an offline mode that considers all future IMU readings when making the current pose estimation. Even in ```offline_testing_simple.py```, we pretend the pre-recorded IMU signal file is streaming into the system frame by frame. In other words, the system is always "real-time".
 
+6. We release two pre-trained models. The first model, ```output/model-without-dip9and10.pt```, is produced exactly from the commands above, holding out subject 9 and 10 in real DIP data. The second model, ```output/model-with-dip9and10.pt``, includes subject 9 and 10 in training. While we shall not use this model for number reporting, we can use it for the real-time demo.
 
 ## Real-time Demo
 
