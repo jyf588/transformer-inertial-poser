@@ -142,7 +142,7 @@ The commands above calls ```real_time_runner_minimal.py```, which runs core (i.e
 
 2.Download MT Software Suite 2021.4 (specific version probably doesn't matter): https://www.xsens.com/software-downloads (→ MTi products) and install it.
 
-3.Connect your MTw Awinda sensors and base station to computer, run MT Manager and follow steps in this link until Step 5, to make sure your computer can successfully read the IMU signals https://xsenstechnologies.force.com/knowledgebase/s/article/Getting-started-with-MTw-and-MT-Manager-2019-1605781542706?language=en_US . Check the visualization to see if the readings make intuitive sense, to prevent using a bad sensor.
+3.Connect your MTw Awinda sensors and base station to computer, run MT Manager and follow steps in this link until Step 5, to make sure your computer can successfully read the IMU signals https://base.xsens.com/s/article/Getting-started-with-MTw-and-MT-Manager-2019?language=en_US . Check the visualization to see if the readings make intuitive sense, to prevent using a bad sensor.
 
 4.Get yourself familiar with the sensor coordinate system (e.g. sec. 11.6 for the Awinda manual): https://www.xsens.com/hubfs/Downloads/Manuals/MTw_Awinda_User_Manual.pdf. Also refer to the paper's Appendix.
 
